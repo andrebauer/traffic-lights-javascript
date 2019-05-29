@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import { SimpleButton, TLState, PCLState, PedestrianCrossingController, SimplePedestrianCrossingLights, SimpleTrafficLights } from './tl.js';
+import { TLState, PCLState, PedestrianCrossingController } from './controller/pedestrian-crossing-controller.js';
+import { SimpleButton } from './input/simple-button.js'
+import { SimplePedestrianCrossingLights, SimpleTrafficLights } from './view/simple-lights.js';
 
 let pcc1 = new PedestrianCrossingController();
 let sb1 = new SimpleButton('sb1');
