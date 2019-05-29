@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { TLState, PCLState, PedestrianCrossingController } from './controller/pedestrian-crossing-controller.js';
 import { SimpleButton } from './input/simple-button.js'
-import { SimplePedestrianCrossingLights, SimpleTrafficLights } from './view/simple-lights.js';
+import { SimplePedestrianCrossingLights, SimpleTrafficLights } from './viewmodel/simple-lights.js';
 
 let pcc1 = new PedestrianCrossingController();
 let sb1 = new SimpleButton('sb1');
