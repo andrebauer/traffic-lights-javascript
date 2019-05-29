@@ -31,6 +31,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.5.1",
     "babel-preset-react-app": "^9.0.0",
     "postcss-cli": "^6.1.2",
