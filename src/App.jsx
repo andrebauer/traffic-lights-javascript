@@ -13,14 +13,14 @@ let stl1 = new SimpleTrafficLights('stl1');
 pcc1.addTrafficLight(stl1);
 
 function Light(props) {
-  return (<div className={(props.condition) + " w-8 h-8 mb-2 rounded-full"}></div>);
+  return (<div className={`${props.condition} w-8 h-8 ${props.margins} rounded-full`}></div>);
 }
 
 function PedestrianCrossingSignals(props) {
   return (
     <div className="bg-black w-12 p-2 rounded">
-      <Light condition={props.model.state === PCLState.Red ? 'bg-red-500' : 'bg-red-900'} />
-      <Light condition={props.model.state === PCLState.Green ? 'bg-green-500' : 'bg-green-900'} />
+      <Light margins='mb-2' condition={props.model.state === PCLState.Red ? 'bg-red-500' : 'bg-red-900'} />
+      <Light margins='mt-2' condition={props.model.state === PCLState.Green ? 'bg-green-500' : 'bg-green-900'} />
     </div>);
 }
 
@@ -69,9 +69,9 @@ function PedestrianCrossingLight(props) {
 function TrafficSignal(props) {
   return (
     <div className="bg-black rounded w-12 h-32 p-2 ">
-      <Light condition={props.model.state === TLState.Red || props.model.state === TLState.RedYellow ? 'bg-red-500' : 'bg-red-900'} />
-      <Light condition={props.model.state === TLState.Yellow || props.model.state === TLState.RedYellow ? 'bg-yellow-500' : 'bg-yellow-900'} />
-      <Light condition={props.model.state === TLState.Green ? 'bg-green-500' : 'bg-green-900'} />
+      <Light margins='mb-2' condition={props.model.state === TLState.Red || props.model.state === TLState.RedYellow ? 'bg-red-500' : 'bg-red-900'} />
+      <Light margins='mb-2 mt-2' condition={props.model.state === TLState.Yellow || props.model.state === TLState.RedYellow ? 'bg-yellow-500' : 'bg-yellow-900'} />
+      <Light margins='mb-t' condition={props.model.state === TLState.Green ? 'bg-green-500' : 'bg-green-900'} />
     </div>
   );
 }
