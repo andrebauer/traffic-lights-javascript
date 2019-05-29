@@ -54,9 +54,9 @@ export class PedestrianCrossingController {
         switch (this.state) {
             case PedestrianCrossingControllerState.CarsCrossing:
                 if (this.pedestrianInput.isSet()) {
-                    this.pedestrianInput.pause();
+                    this.pedestrianInput.waitforSignal();
                     this.timer = timer.default;
-                } else if (this.pedestrianInput.isPaused()) {
+                } else if (this.pedestrianInput.isWaitingForSignal()) {
                     if (this.timer === 0) {
                         this.state = PedestrianCrossingControllerState.TransitionCarsToPedestrains;
                     } else {
@@ -84,6 +84,7 @@ export class PedestrianCrossingController {
                     case TLState.Red:
                         if (this.timer === 0) {
                             this.pedestrianCrossingLight.turn(PCLState.Green)
+                            this.pedestrianInput.pause();
                             this.state = PedestrianCrossingControllerState.PedestriansCrossing;
                             this.timer = timer.pedestrian;
                         } else {
@@ -136,6 +137,7 @@ export class PedestrianCrossingController {
 let SimpleButtonState = {
     Pushed: 'Pushed',
     Resumed: 'Resumed',
+    WaitForSignal: 'Wait for Signal',
     Paused: 'Paused'
 }
 
@@ -153,6 +155,15 @@ export class SimpleButton {
 
     isPaused() {
         return this.state === SimpleButtonState.Paused;
+    }
+
+    isWaitingForSignal() {
+        return this.state === SimpleButtonState.WaitForSignal;
+    }
+
+    waitforSignal() {
+        this.state = SimpleButtonState.WaitForSignal;
+        console.log(this);
     }
 
     pause() {
