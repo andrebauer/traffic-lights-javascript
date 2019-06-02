@@ -29,7 +29,7 @@ export class SimpleButton {
         return this.state === SimpleButtonState.WaitForSignal;
     }
 
-    waitforSignal() {
+    waitForSignal() {
         this.state = SimpleButtonState.WaitForSignal;
         console.log(this);
     }

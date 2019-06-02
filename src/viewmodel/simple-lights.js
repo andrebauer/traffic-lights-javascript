@@ -4,7 +4,7 @@
 
 import { TLState, PCLState } from '../controller/pedestrian-crossing-controller.js'
 
-export class SimplePedestrianCrossingLights {
+export class SimplePedestrianCrossingLight {
     constructor(name) {
         this.name = name;
         this.state = PCLState.Red;
@@ -16,7 +16,7 @@ export class SimplePedestrianCrossingLights {
     }
 }
 
-export class SimpleTrafficLights {
+export class SimpleTrafficLight {
     constructor(name) {
         this.name = name;
         this.state = TLState.Green;

@@ -54,7 +54,7 @@ export class PedestrianCrossingController {
         switch (this.state) {
             case PedestrianCrossingControllerState.CarsCrossing:
                 if (this.pedestrianInput.isSet()) {
-                    this.pedestrianInput.waitforSignal();
+                    this.pedestrianInput.waitForSignal();
                     this.timer = timer.default;
                 } else if (this.pedestrianInput.isWaitingForSignal()) {
                     if (this.timer === 0) {

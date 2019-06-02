@@ -5,7 +5,7 @@ function Light(props) {
     return (<div className={`${props.condition} w-8 h-8 ${props.margins} rounded-full`}></div>);
 }
 
-function PedestrianCrossingSignals(props) {
+function PedestrianCrossingSignal(props) {
     return (
         <div className="bg-black w-12 p-2 rounded">
             <Light margins='mb-2' condition={props.model.state === PCLState.Red ? 'bg-red-500' : 'bg-red-900'} />
@@ -47,7 +47,7 @@ function Stick(props) {
 export function PedestrianCrossingLight(props) {
     return (
         <div className="absolute bottom-0 left-0">
-            <PedestrianCrossingSignals model={props.model} />
+            <PedestrianCrossingSignal model={props.model} />
             <Stick height='24' />
             <PedestrianInput model={props.input} />
             <Stick height='32' />

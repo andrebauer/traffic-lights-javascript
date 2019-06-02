@@ -1,15 +1,15 @@
 import React from 'react';
 import { PedestrianCrossingController } from './controller/pedestrian-crossing-controller.js';
 import { SimpleButton } from './input/simple-button.js'
-import { SimplePedestrianCrossingLights, SimpleTrafficLights } from './viewmodel/simple-lights.js';
+import { SimplePedestrianCrossingLight, SimpleTrafficLight } from './viewmodel/simple-lights.js';
 import { PedestrianCrossingLight, TrafficLight, Timer } from './components/TrafficLights.jsx';
 
 let pcc1 = new PedestrianCrossingController();
 let sb1 = new SimpleButton('sb1');
 pcc1.addPedestrianInput(sb1);
-let spcl1 = new SimplePedestrianCrossingLights('spcl1');
+let spcl1 = new SimplePedestrianCrossingLight('spcl1');
 pcc1.addPedestrianCrossingLight(spcl1);
-let stl1 = new SimpleTrafficLights('stl1');
+let stl1 = new SimpleTrafficLight('stl1');
 pcc1.addTrafficLight(stl1);
 
 
